@@ -31,7 +31,7 @@ n = int(input("How many Dogs ? : "))
 
 for i in range (0,n):
 
-    a = input("breed : ",)
+    a = input("breed : ")
     b = input("name : ")
     c = input("dogColor : ")
     d = input("size : ")
