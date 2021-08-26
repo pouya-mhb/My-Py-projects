@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<title>Register page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+</head>
+<body class="info">
+    <div id="logo">
+    </div>
+    <div id="infoBlock">
+        <h1>
+            Register page
+        </h1>
+        <h2>{{ count }} people have filled the form until this very moment.</h2>
+        <form class="pure-form" method="POST" style="margin-left: 1%;">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Please fill the information</legend>
+                <input name="first_name" type="text" placeholder="First Name" /><br><br>
+                <input name="last_name" type="text" placeholder="Last Name" /><br><br>
+                <input name="email" type="email" placeholder="Email" /><br><br>
+                <input name="phone" type="text" placeholder="phone" /><br><br>
+                <input name="description" type="text" placeholder="description" style="padding-bottom: 5%;" /><br><br>
+                <button type="submit" class="pure-button pure-button-primary">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
