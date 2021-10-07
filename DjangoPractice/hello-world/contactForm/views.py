@@ -1,7 +1,37 @@
+from django.forms.fields import MultipleChoiceField
 from contactForm.models import Contact
 from django import http
 from django.shortcuts import render
 from django.http import HttpResponse
+from .forms import ContactForm
+
+def contact_form(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            #Contact.objects.create(**form.cleaned_data)
+            form.save()
+            return HttpResponse('thank you')
+        else : 
+            return HttpResponse('invalid response')
+    if request.method == 'GET':
+        form = ContactForm() #an empty form to render
+        return render (request,'contactForm/index.html' , {'form':form})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def mhb_response(request):
     return HttpResponse("Hello I'm pouya")

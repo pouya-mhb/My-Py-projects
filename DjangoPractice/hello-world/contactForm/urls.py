@@ -5,5 +5,6 @@ from . import views
 urlpatterns=[
     # path('',views.mhb_response),
     path('register/', views.register),
-    path('request-name',views.request_name)
+    path('request-name',views.request_name),
+    path('', views.contact_form,name='form1')
 ]
